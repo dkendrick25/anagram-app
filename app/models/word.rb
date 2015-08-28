@@ -10,7 +10,7 @@ class Word
   		end
   	end
 
-	def self.find_anagrams(letters)
+	def self.find_anagram(letters)
 		length = letters.length
 
 		#make the letters an array
@@ -18,14 +18,15 @@ class Word
 
 		anagrams = []
 
-		leters.each_with_index do |letter, index|
+		letters.each_with_index do |letter, index|
 			remaining_letters = letters.select {|l| l != letter}
 			anagrams << letter + remaining_letters.join
 
 			anagrams << letter + reverse_letters(remaining_letters).join('')
 		end
-
+		anagrams
 	end
-
+	 
+	
 end
  

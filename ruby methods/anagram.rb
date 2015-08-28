@@ -8,7 +8,7 @@ def find_anagrams(letters)
 
 	anagrams = []
 
-	leters.each_with_index do |letter, index|
+	letters.each_with_index do |letter, index|
 		remaining_letters = letters.select {|l| l != letter}
 		anagrams << letter + remaining_letters.join
 
