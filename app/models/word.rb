@@ -1,4 +1,4 @@
-class Word
+class Word < ActiveRecord::Base
 	def self.reverse_letters(letters)
   		# create a new array of 2 items
   		length = letters.length
