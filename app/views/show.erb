@@ -1,6 +1,7 @@
-<h1>Anagrams for <%= "#{@word}" %></h1>
-<ul>
+<h1 class="header">Anagrams for <strong><%= "#{@word.upcase}" %></strong></h1>
+	<img id="arrow" src="public/images/assets/arrow.png"/>
+<ul id="anagram-list">
     <% @anagrams.each do |word| %>
-    <li><%= "#{word}" %></li>
+    <p><%= "#{word}" %></p>
     <% end %>
 </ul>  
