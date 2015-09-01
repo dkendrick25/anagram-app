@@ -11,6 +11,8 @@ class Word < ActiveRecord::Base
   	end
 
 	def self.find_anagram(letters)
+		combinations = []
+
 		length = letters.length
 
 		#make the letters an array
@@ -24,7 +26,15 @@ class Word < ActiveRecord::Base
 
 			anagrams << letter + reverse_letters(remaining_letters).join('')
 		end
-		anagrams
+
+		#loop through letters to run against the dictionary in the db and only print real words
+		combinations.each do |combo|
+    		if Word.find_by_text(combo).present?
+      			anagrams << combo
+  		end
+  	end
+
+		combinations
 	end
 	 
 	
