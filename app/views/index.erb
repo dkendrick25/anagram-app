@@ -1,11 +1,15 @@
-<div>
+<div class=index>
 	<div class="header">
 <h2>Welcome to my</h2>
 <h1>ANAGRAM GENERATOR</h1>
  </div>
+<% if @error.present? %>
+  <p class='error'><%= "#{@error}" %></p>
+<% end %>
+ 
 <form action="/" method="post" class="form">
   <label for="word">Enter a word. Only 3 letters please!</label>
   <input type="text" name="word">
-  <input type="submit" class="btn">
+  <input type="submit" class="btn" value="Show my Anagrams">
 </form>
 </div>
