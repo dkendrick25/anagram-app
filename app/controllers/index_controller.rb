@@ -1,4 +1,5 @@
 get '/' do
+@body_class = "home"
   erb :index
 end
 

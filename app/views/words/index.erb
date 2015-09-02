@@ -1,15 +1,22 @@
-<h1>Words</h1>
-  <table class="table table-striped">
-    <thead>
-      <th>Text</th>
-      <th>Letters</th>    
-    </thead>
-    <tbody>
-      <% "loop through @words here..." %>
-        <tr>
-          <td>(print the text here)</td>
-          <td>(print letters here)</td>        
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+<h1>WORDS</h1>
+<div class="button-container">
+<form action="<%= "/words/new" %>" method="get">
+<input class="small-button" type="submit" value="ADD WORD" />
+</form>
+<form action="<%= "/" %>" method="get">
+<input class="small-button" type="submit" value="BACK" />
+</form>
+</div>
+<p class="label-text">Click a word to edit</p>
+<div class="word-list">
+	<div>
+		<% @column1.each do |word| %>
+			<div class="column"><a class="word-link" href="<%= "/words/#{word.id}" %>"> <%= "#{word.text.upcase}" %></div></a>
+		<% end %>
+		<% @column2.each do |word| %>
+			<div class="column"><a class="word-link" href="<%= "/words/#{word.id}" %>"> <%= "#{word.text.upcase}" %></div></a>
+		<% end %>
+		<% @column3.each do |word| %>
+			<div class="column"><a class="word-link" href="<%= "/words/#{word.id}" %>"> <%= "#{word.text.upcase}" %></div></a>
+		<% end %>
+	</div>

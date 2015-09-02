@@ -1,0 +1,196 @@
+/*element tags*/
+body {
+	background: url('/css/assets/tiles-03.png') no-repeat bottom left fixed, url('/css/assets/pw_maze_white_@2X.png') repeat fixed;
+	font-family: 'montserrat', arial;
+	font-weight: 400;
+	text-align: center;
+}
+
+h1 {
+	color: rgb(253,52,93);
+	font-size: 4em;
+}
+
+h2 {
+	margin: 5px auto 0;
+}
+
+img {
+	margin-top: 35px;
+	margin-bottom: 25px;
+}
+
+td {
+	text-align: left;
+}
+
+input[type="text"] {
+	width: 100%;
+	box-sizing: border-box;
+	margin: 5px 0 15px 0;
+  padding: 10px; 
+  font-size: 1.6em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #B2B2B2;
+}
+
+input[type="submit"] {
+	width: 540px;
+  text-align: center;
+  height: 80px;
+  -webkit-appearance: none;
+  background-color: rgb(253,52,93);
+  font-family: 'Montserrat';
+  color: white;
+  font-weight: 400;
+  font-size: 1.9em;
+}
+
+/*class tags*/
+.index {
+	margin: 30vh auto;
+}
+
+.home {
+	margin: 30vh auto;
+}
+
+.show {
+	background: url('/css/assets/tiles-02.png') no-repeat bottom left fixed, url('/css/assets/pw_maze_white_@2X.png') repeat fixed;;
+	margin: auto;
+	font-style: normal;
+}
+
+.words {
+	background: url('/css/assets/tiles-01.png') no-repeat bottom left fixed, url('/css/assets/pw_maze_white_@2X.png') repeat fixed;
+	margin: 15vh auto;
+}
+
+.word-error {
+	margin: 40px auto 0;
+}
+
+.label-text {
+	margin: 0 auto;
+	width: 540px;
+	display: block;
+	font-family: 'Open Sans', sans-serif;
+	font-style: italic;
+	color: #4C4C4C;
+	font-size: 1.5em;
+	outline: 0; 
+}
+
+.new-header {
+	margin: auto;
+}
+
+.new-word {
+	color: rgb(253,52,93);
+	font-family: 'montserrat', arial;
+	font-weight: 400;
+	text-align: center;
+	font-style: normal;
+}
+
+.form-header {
+	font-family: 'montserrat', arial;
+	font-weight: 400;
+	color: rgb(253,52,93);
+	font-size: 4em;
+}
+
+.anagrams-header {
+	font-family: "Roboto";
+	font-size: 3em;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+.word-link:link, .word-link:visited {
+	color: rgb(253,52,93);
+	font-size: 2em;
+	margin: 0;
+	display: inline-block;
+	padding-bottom: 0;
+	line-height: 1;
+	text-decoration: none;
+}
+
+.word-link:hover {
+	text-decoration: underline;
+}
+
+.word-link:active {
+	color: grey;
+}
+
+.user-word {
+	color: rgb(253,52,93);
+	font-size: 4.5em;
+	border-bottom: 5px solid rgb(253,52,93);
+	margin: 0;
+	display: inline-block;
+	padding-bottom: 0;
+	line-height: 1;
+}
+
+.word-text, .word-letters {
+	color: rgb(253,52,93);
+	font-size: 4.5em;
+	margin: 0;
+	display: inline-block;
+	padding-bottom: 0;
+	line-height: 1;
+}
+
+.word-letters {
+	margin-bottom: 15px;
+}
+
+.word {
+	color: rgb(253,52,93);
+	font-size: 4.5em;
+	width: 100%;
+	margin: 0;
+}
+
+.table {
+	margin: auto;
+}
+
+.word-list {
+	width: 65%;
+	margin: 30px auto;
+	-webkit-column-count: 3;
+	-moz-column-count: 3;
+}
+
+.edit-button {
+	margin: 35px auto 0;
+}
+
+.dictionary-form {
+	margin: 200px auto 75px;
+}
+
+.add-button {
+	margin: 0 auto 45px;
+}
+
+.small-button.small-button {
+	width: 200px;
+  height: 40px;
+  font-size: 1em;
+  margin: 0 10px 45px;
+  display: inline;
+  vertical-align: middle;
+}
+
+.button-container form{
+	display: inline;
+}
+
+/*state tags*/
+:focus {outline:none;}

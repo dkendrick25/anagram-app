@@ -1,7 +1,13 @@
-<h1 class="header">Anagrams for <strong><%= "#{@word.upcase}" %></strong></h1>
-	<img id="arrow" src="public/images/assets/arrow.png"/>
-<ul id="anagram-list">
-    <% @anagrams.each do |word| %>
-    <p><%= "#{word}" %></p>
-    <% end %>
-</ul>  
+<div class="show">
+<h1 class="anagrams-header">Anagrams For The Word</h1>
+<div class="user-word"><h2><%= "#{@word.upcase}" %></h2></div>
+<div id="arrows"><img src="/css/assets/arrow.png"></div>
+<div class="anagram-list">
+	<% @anagrams.each do |word| %>
+		<p class ="word"><%= word.text.upcase unless word.text == @word %></p>
+	<% end %>
+</div>
+</div>
+<form class="dictionary-form" action="<%= "/words" %>" method="get">
+<input class="edit-button" type="submit" value="SEE DICTIONARY" />
+</form>

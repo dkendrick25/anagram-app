@@ -1,0 +1,14 @@
+<form action="<%= word_form_action(@word) %>" method="post" id="<%= word_form_id(@word) %>" class="<%= word_form_class(@word) %>">
+	<input type="hidden" name="_method" value="<%= word_form_method(@word) %>" />
+<% if @error.present? %>
+	<p class='word-error'><%= "#{@error}" %></p>
+<% end %>
+	<div class="new-word label-text">
+		<label for="text"></label><br />
+		<input name="text" type="text" value="<%= @word.text.upcase unless @word.new_record? %>" placeholder=""/>
+	</div>
+		<br />
+	<div>
+		<input class="btn btn-default" type="submit" value="SUBMIT" />
+	</div>
+</form>
