@@ -1,41 +1,42 @@
 class Word < ActiveRecord::Base
-	def self.reverse_letters(letters)
+	def self.reverse_letters(word)
   		# create a new array of 2 items
-  		length = letters.length
-  		reversed_letters = Array.new(length)
+  		reversed = Array.new(word.length)
  
   		# loop through letters and keep index
-  		letters.each_with_index do |letter, index|
-    	reversed_letters[length - index - 1] = letter
+  		word.each_with_index do |letter, index|
+    	reversed[word.length - index - 1] = letter
   		end
+  		reveresed
   	end
 
-	def self.find_anagram(letters)
-		combinations = []
-
-		length = letters.length
-
-		#make the letters an array
-		letters = letters.split("")
-
+	# initialize array of anagrams, add original word
 		anagrams = []
+		final_list = []
 
-		letters.each_with_index do |letter, index|
-			remaining_letters = letters.select {|l| l != letter}
-			anagrams << letter + remaining_letters.join
+		# split word into array of letters
+		letters = word.split('')
 
-			anagrams << letter + reverse_letters(remaining_letters).join('')
+		# reverse second two letters, swap first and second, repeat for all letters
+		for letter in letters do
+			second_two = reverse_letters(letters.last(2))
+			letters = [letters[0], second_two].flatten!
+			anagrams << letters.join unless letters.join == word
+			
+			letters[0], letters[1] = letters[1], letters[0]
+			anagrams << letters.join unless letters.join == word
 		end
 
-		#loop through letters to run against the dictionary in the db and only print real words
-		combinations.each do |combo|
-    		if Word.find_by_text(combo).present?
-      			anagrams << combo
-  		end
-  	end
+		anagrams.each do |potential_word|
+			if Word.find_by_text(potential_word).present?
+				final_list << potential_word
+			end
+		end	
 
-		combinations
+		# return anagram array, removes dupes
+		final_list.uniq
 	end
+
 	 
 	
 end
