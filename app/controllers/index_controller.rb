@@ -3,9 +3,12 @@ get '/' do
 end
 
 get '/anagrams/:word' do
-  @word = params[:word]
-  @anagrams = Word.find_anagram(@word)
-  erb :show
+	@word = params[:word]
+
+	word_array = @word.chars.sort
+	alphabetized_string = word_array.join
+	@anagrams = Word.where(letters: "#{alphabetized_string}")
+	erb :show
 end
 
 
@@ -19,3 +22,4 @@ post '/' do
 		erb :index
 	end
 end
+
