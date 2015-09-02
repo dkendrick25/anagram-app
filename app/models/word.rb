@@ -1,4 +1,19 @@
 class Word < ActiveRecord::Base
+
+before_save :add_letters, :downcase
+
+	validates_presence_of :text
+	
+	def add_letters
+			characters = self.text.chars
+			alphabetized_characters = characters.sort
+			self.letters = alphabetized_characters.join
+	end
+
+	def downcase
+		self.text.downcase!
+	end
+	
 	def self.reverse_letters(word)
   		# create a new array of 2 items
   		reversed = Array.new(word.length)
