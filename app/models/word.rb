@@ -1,6 +1,6 @@
 class Word < ActiveRecord::Base
 
-before_save :add_letters, :downcase
+	before_save :add_letters, :downcase
 
 	validates_presence_of :text
 	
@@ -13,19 +13,9 @@ before_save :add_letters, :downcase
 	def downcase
 		self.text.downcase!
 	end
-	
-	def self.reverse_letters(word)
-  		# create a new array of 2 items
-  		reversed = Array.new(word.length)
- 
-  		# loop through letters and keep index
-  		word.each_with_index do |letter, index|
-    	reversed[word.length - index - 1] = letter
-  		end
-  		reveresed
-  	end
 
-	# initialize array of anagrams, add original word
+	def self.find_anagrams(word)
+		# initialize array of anagrams, add original word
 		anagrams = []
 		final_list = []
 
@@ -52,7 +42,15 @@ before_save :add_letters, :downcase
 		final_list.uniq
 	end
 
-	 
-	
+	def self.reverse_letters(word)
+		reversed = Array.new(word.length)
+
+		word.each_with_index {|letter, index|
+			reversed[word.length - index - 1] = letter
+		}
+
+		reversed
+	end
+
+
 end
- 
